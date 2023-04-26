@@ -1,0 +1,23 @@
+.sidebar {
+    border-right: 1px solid var(--twitter-background); /* 定数の呼び出し的なの */
+    flex: 0.2;
+    min-width: 250px;
+    margin-top: 20px;
+    padding: 0 20px;
+}
+
+.sidebar__twitter--icon {
+    color: var(--twitter-color);
+    font-size: 30px !important;
+    margin: 0 0 20px 20px;
+}
+
+.sidebar__tweet--btn {
+    background-color: var(--twitter-color) !important;
+    color: white !important;
+    font-weight: 900 !important;
+    border: none !important;
+    border-radius: 30px !important;
+    height: 50px !important;
+    margin-top: 20px !important;
+}
