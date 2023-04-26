@@ -10,9 +10,9 @@ import './SidebarOption.css';
  * @returns {JSX.Element}
  * @constructor
  */
-function SidebarOption({text, Icon}) {
+function SidebarOption({text, Icon, active}) {
     return (
-        <div className="sidebar__option">
+        <div className={`sidebar__option ${active && 'sidebar__option--active'}`}>
             <Icon/>
             <h2>{text}</h2>
         </div>

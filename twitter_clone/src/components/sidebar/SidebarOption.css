@@ -6,6 +6,10 @@
     margin-left: 20px;
 }
 
+.sidebar__option--active {
+    color: var(--twitter-color);
+}
+
 .sidebar__option:hover {
     background-color: #e8f5fe;
     border-radius: 30px;
