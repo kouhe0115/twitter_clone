@@ -3,7 +3,7 @@ import './Timeline.css';
 import TweetBox from "./TweetBox";
 import Post from "./Post";
 import db from '../../firebase';
-import {collection, getDocs, query, orderBy} from "firebase/firestore";
+import {collection, getDocs, query, onSnapshot, orderBy} from "firebase/firestore";
 
 /**
  * Timeline に関する component
@@ -40,13 +40,21 @@ function Timeline() {
 
         /**
          * 変数の格納
-         * getDocs メソッドで非同期取得
+         * getDocs メソッドで取得
          * querySnapshot での取得
          * setPosts 上記で設定した関数を用いて、posts に値の格納
          * doc.data() を doc に格納して、posts（変更：q） に格納
          */
-        getDocs(q).then((querySnapshot) => {
-            setPosts(querySnapshot.docs.map((doc) => doc.data()));
+        // getDocs(q).then((querySnapshot) => {
+        //     setPosts(querySnapshot.docs.map((doc) => doc.data()));
+        // });
+
+        /**
+         * リアルタイム取得
+         * 上記 getDocs の処理を変更
+         */
+        onSnapshot(q, (querySnapshot) => {
+            setPosts(querySnapshot.docs.map((doc) => doc.data()))
         });
     }, []);
 
