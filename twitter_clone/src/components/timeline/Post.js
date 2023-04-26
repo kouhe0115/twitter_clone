@@ -5,30 +5,30 @@ import {
 } from "@mui/icons-material";
 import './Post.css';
 
-function Post() {
+function Post({displayName, username, text, avatar, image}) {
     return (
         <div className='post'>
             <div className='post__avatar'>
-                <Avatar/>
+                <Avatar src={avatar}/>
             </div>
 
             <div className='post__body'>
                 <div className='post__body__header'>
                     <div className='post__body__header--text'>
-                        <h3>test
+                        <h3>{displayName}
                             <span className='post__body__header--special'>
                                 <VerifiedUser className='post__body__header--special__badge'/>
-                                @user_name
+                                @{username}
                             </span>
                         </h3>
                     </div>
 
                     <div className='post__body__header--description'>
-                        <p>text</p>
+                        <p>{text}</p>
                     </div>
                 </div>
 
-                <img src="https://source.unsplash.com/random"/>
+                <img src={image}/>
 
                 <div className='post__body__footer'>
                     <ChatBubbleOutline fontSize="small"/>
